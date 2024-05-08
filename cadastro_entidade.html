@@ -42,26 +42,60 @@
     <main>
       <div id="mensagem"></div>
         <div class="container-sm mt-4 py-3 px-3 col-5 rounded bg-rosa">
-            <h1 class="titulo">Tela de Cadastro</h1>
+            <h1 class="titulo">Cadastro de Empresas</h1>
             <div>
-                <label for="nomex" class="form-label">Insira o seu nome: </label>
-                <input type="text" id="nome" class="form-control" onkeyup="validarCampos()">
+                <label for="nome_empresa" class="form-label">Insira o nome da empresa:</label>
+                <input type="text" id="nome_empresa" class="form-control">
             </div>
 
             <div>
-                <label for="senha" class="form-label">Insira uma senha: </label>
-                <input type="password" id="senha" class="form-control" onkeyup="validarCampos()">
+                <label for="cnpj" class="form-label">CPNJ:</label>
+                <input type="text" id="cnpj" class="form-control">
             </div>
 
-
             <div>
-                <label for="confirmar_senha" class="form-label">Confirme a senha: </label>
-                <input type="password" id="confirmar_senha" class="form-control" onkeyup="validarCampos()">
+              <label for="teste" class="form-label">Teste</label>
+              <input type="text" id="teste" class="form-control">
+            </div>
+            <div>
+              <label for="teste2" class="form-label">Teste2</label>
+              <input type="text" id="teste" class="form-control">
+            </div>
+            <div>
+                <label for="ano_fundacao" class="form-label">Ano de fundação:</label>
+                <input type="number" id="ano_fundacao" class="form-control">
+            </div>
+            
+            <div>
+              <div>
+                <label for="cep" class="form-label">CEP:</label>
+                <input type="number" max="99999999" id="cep" class="form-control" onkeyup="consultaCep()">
+              </div>
+
+              <div>
+                <label for="logradouro" class="form-label">Logradouro:</label>
+                <input type="text" id="logradouro" class="form-control">
+              </div>
+              <div>
+                <label for="bairro" class="form-label">Bairro:</label>
+                <input type="text" id="bairro" class="form-control">
+              </div>
+              <div>
+                <label for="cidade" class="form-label">Cidade:</label>
+                <select name="cidades" id="cidades">
+                  <option value="0" id="cidade">Selecione uma cidade</option>
+                </select>
+                <!-- <input type="text" id="cidade" class="form-control"> -->
+              </div><div>
+                <label for="uf" class="form-label">UF:</label>
+                <input type="text" id="uf" class="form-control">
+              </div>
             </div>
 
 
             <div class="row mt-3 grid">
-                <input type="reset" value="Limpar valores" class="btn btn-danger g-col-4" onclick="limparCampos()">
+                <input type="reset" value="Limpar valores" class="btn btn-danger g-col-4" onclick="limparDados()">
+                <input type="reset" value="Limpar valores" class="btn btn-secondary g-col-4" onclick="limparDados()">
                 <input type="submit" value="Enviar" id="enviar" class="btn btn-success g-col-4" onclick="cadastrar()" disabled>                    
             </div>
         </div>

@@ -53,3 +53,67 @@ function limparCampos(){
     confirmar_senha.value = "";
     
 }
+
+
+// (ITEM 4) consultar cep e inserir nos campos de input
+async function consultaCep(){
+    const cep = document.getElementById("cep").value;
+    
+    const logradouro = document.getElementById("logradouro");
+    const bairro = document.getElementById("bairro");
+    const cidades_select = document.getElementById("cidades");
+    const cidade = document.getElementById("cidade");
+    const uf = document.getElementById("uf");
+    
+    if(cep.length == 8) {
+        const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        const data = await response.json()
+        logradouro.value = data['logradouro']
+        console.log(data['cep'])
+        bairro.value = data['bairro']
+        cidade.value = data['localidade']
+        cidade.innerHTML = `${data['localidade']}`
+        uf.value = data['uf']
+
+        const resposta = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${data['uf']}/distritos`)
+        const cidades = await resposta.json()
+        console.log(cidades)
+
+        for (let i = 0; i < cidades.length; i++) {
+            let optn = elmts[i];
+            let el = document.createElement("option");
+            el.textContent = optn;
+            el.value = optn;
+            select.appendChild(el);
+        }
+        res.innerHTML = "Elements Added";
+
+    }
+
+}
+
+
+// (ITEM 4) limpar dados do item 4, todos os campos de cadastrar 
+function limparDados(){
+    const nome_empresa = document.getElementById("nome_empresa")
+    const cnpj = document.getElementById("cnpj")
+    const ano_fundacao = document.getElementById("ano_fundacao")
+    const teste1 = document.getElementById("teste1")
+    const teste2 = document.getElementById("teste2")
+
+    const cep = document.getElementById("cep")
+    const logradouro = document.getElementById("logradouro")
+    const bairro = document.getElementById("bairro")
+    const cidade = document.getElementById("cidade")
+    const uf = document.getElementById("uf")
+
+    nome_empresa.value = ""
+    cnpj.value = ""
+    ano_fundacao.value = ""
+    cep.value = ""
+    logradouro.value = ""
+    bairro.value = ""
+    cidade.value = ""
+    uf.value = ""
+
+}
