@@ -22,6 +22,13 @@ footer{
     
 }
 
+.ativa{
+    border: 1px green solid;
+    width: 42%;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
