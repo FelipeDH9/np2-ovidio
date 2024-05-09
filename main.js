@@ -55,7 +55,7 @@ function limparCampos(){
 }
 
 
-// (ITEM 4) consultar cep e inserir nos campos de input, e criar a lista de cidades do estado em questão
+// (ITEM 4) consultar cep e inserir nos campos de input, e criar a lista de cidades do estado em questãox
 async function consultaCep(){
     const cep = document.getElementById("cep").value;
     
@@ -69,7 +69,6 @@ async function consultaCep(){
         const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
         const data = await response.json()
         logradouro.value = data['logradouro']
-        console.log(data['cep'])
         bairro.value = data['bairro']
         cidade.value = data['localidade']
         cidade.innerHTML = `${data['localidade']}`
@@ -78,7 +77,6 @@ async function consultaCep(){
         // função para cirar campos das cidades na lista suspensa (select)
         const resposta = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${data['uf']}/distritos`)
         const cidades = await resposta.json()
-        console.log(cidades)
 
         for (let i = 0; i < cidades.length; i++) {
             var option = document.createElement("option")
@@ -116,7 +114,10 @@ function limparDados(){
     email.value = ""
 }
 
-// (ITEM 4) funcção para inserir os dados dos inputs na tabela
+// (ITEM 4) criar o json que onde as entidades cadastradas serão salvas
+let jsonEmpresas = {"empresas":[]}
+
+// (ITEM 4) função para inserir os dados dos inputs na tabela
 function inserir(){
     const nome_empresa = document.getElementById("nome_empresa")
     const cnpj = document.getElementById("cnpj")
@@ -146,5 +147,12 @@ function inserir(){
     var endereco_completo = `${logradouro.value}, ${bairro.value}, ${cidade.value}, ${uf.value}, ${cep.value}`
     campo5.innerHTML = endereco_completo
     
+    // Novo objeto a ser adicionado ao jsonEmpresas
+    var novoObjeto = {"nome_empresa":  nome_empresa.value, "cnpj": cnpj.value, "ano_fundacao": ano_fundacao.value, "telefone": telefone.value, "email": email.value, "cep": cep.value, "logradouro": logradouro.value, "bairro": bairro.value, "cidade": cidade.value, "uf": uf.value};
 
+    jsonEmpresas.empresas.push(novoObjeto);
+
+    console.log(jsonEmpresas)
+
+    
 }
