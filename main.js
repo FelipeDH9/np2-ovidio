@@ -55,7 +55,7 @@ function limparCampos(){
 }
 
 
-// (ITEM 4) consultar cep e inserir nos campos de input
+// (ITEM 4) consultar cep e inserir nos campos de input, e criar a lista de cidades do estado em questão
 async function consultaCep(){
     const cep = document.getElementById("cep").value;
     
@@ -75,31 +75,28 @@ async function consultaCep(){
         cidade.innerHTML = `${data['localidade']}`
         uf.value = data['uf']
 
+        // função para cirar campos das cidades na lista suspensa (select)
         const resposta = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${data['uf']}/distritos`)
         const cidades = await resposta.json()
         console.log(cidades)
 
         for (let i = 0; i < cidades.length; i++) {
-            let optn = elmts[i];
-            let el = document.createElement("option");
-            el.textContent = optn;
-            el.value = optn;
-            select.appendChild(el);
+            var option = document.createElement("option")
+            option.text = cidades[i]['municipio']['nome']
+            cidades_select.add(option)
         }
-        res.innerHTML = "Elements Added";
 
     }
 
 }
-
 
 // (ITEM 4) limpar dados do item 4, todos os campos de cadastrar 
 function limparDados(){
     const nome_empresa = document.getElementById("nome_empresa")
     const cnpj = document.getElementById("cnpj")
     const ano_fundacao = document.getElementById("ano_fundacao")
-    const teste1 = document.getElementById("teste1")
-    const teste2 = document.getElementById("teste2")
+    const telefone = document.getElementById("telefone")
+    const email = document.getElementById("email")
 
     const cep = document.getElementById("cep")
     const logradouro = document.getElementById("logradouro")
@@ -115,5 +112,39 @@ function limparDados(){
     bairro.value = ""
     cidade.value = ""
     uf.value = ""
+    telefone.value = ""
+    email.value = ""
+}
+
+// (ITEM 4) funcção para inserir os dados dos inputs na tabela
+function inserir(){
+    const nome_empresa = document.getElementById("nome_empresa")
+    const cnpj = document.getElementById("cnpj")
+    const ano_fundacao = document.getElementById("ano_fundacao")
+    const telefone = document.getElementById("telefone")
+    const email = document.getElementById("email")
+
+    const cep = document.getElementById("cep")
+    const logradouro = document.getElementById("logradouro")
+    const bairro = document.getElementById("bairro")
+    const cidade = document.getElementById("cidade")
+    const uf = document.getElementById("uf")
+
+    const tabela = document.getElementById("empresas")
+    var linha = tabela.insertRow(1)
+    var campo0 = linha.insertCell(0)
+    var campo1 = linha.insertCell(1)
+    var campo2 = linha.insertCell(2)
+    var campo3 = linha.insertCell(3)
+    var campo4 = linha.insertCell(4)
+    var campo5 = linha.insertCell(5)
+    campo0.innerHTML = nome_empresa.value
+    campo1.innerHTML = cnpj.value
+    campo2.innerHTML = email.value
+    campo3.innerHTML = telefone.value
+    campo4.innerHTML = ano_fundacao.value
+    var endereco_completo = `${logradouro.value}, ${bairro.value}, ${cidade.value}, ${uf.value}, ${cep.value}`
+    campo5.innerHTML = endereco_completo
+    
 
 }

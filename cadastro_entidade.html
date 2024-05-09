@@ -54,12 +54,12 @@
             </div>
 
             <div>
-              <label for="teste" class="form-label">Teste</label>
-              <input type="text" id="teste" class="form-control">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="text" id="email" class="form-control">
             </div>
             <div>
-              <label for="teste2" class="form-label">Teste2</label>
-              <input type="text" id="teste" class="form-control">
+              <label for="telefone" class="form-label">Telefone</label>
+              <input type="text" id="telefone" class="form-control">
             </div>
             <div>
                 <label for="ano_fundacao" class="form-label">Ano de fundação:</label>
@@ -94,11 +94,23 @@
 
 
             <div class="row mt-3 grid">
-                <input type="reset" value="Limpar valores" class="btn btn-danger g-col-4" onclick="limparDados()">
+                <input type="reset" value="Cancelar" class="btn btn-danger g-col-4">
                 <input type="reset" value="Limpar valores" class="btn btn-secondary g-col-4" onclick="limparDados()">
-                <input type="submit" value="Enviar" id="enviar" class="btn btn-success g-col-4" onclick="cadastrar()" disabled>                    
+                <input type="submit" value="Enviar" id="enviar" class="btn btn-success g-col-4" onclick="inserir()">                    
             </div>
         </div>
+        
+        <h2>Empresas Cadastradas</h2>
+        <table id="empresas">
+          <tr>
+            <th>Nome</th>
+            <th>CNPJ</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Ano de fundação</th>
+            <th>Endereço</th>
+          </tr>
+        </table>
     </main>
 
     <footer class="rodape bg-rosa">
