@@ -1,0 +1,53 @@
+.container-login {
+    display: flex;
+    flex-direction: column;
+    
+    background-color: #33313B;
+    color: #F6F5F5;
+    border-radius: 12px;
+    
+    gap: 8px;
+    
+    /* 16px acima e abaixo - auto para centralizar */
+    margin: 16px auto;
+    padding: 8px;
+    
+}
+
+.container-login input {
+    min-width: 360px;
+    background-color: #F6F5F5;
+}
+
+.my-8 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.container-login span, h1 {
+    text-align: center;
+}
+.login-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.login-cadastro a {
+    color: #4592AF;
+}
+
+.login-cadastro a:hover {
+    color: #94ABAC;   
+}
+
+.color-palette {
+    color: #33313B;
+    color: #3C6275;
+    color: #4592AF;
+    color: #94ABAC;
+    color: #E3C4A8;
+    color: #EDDDCF;
+    color: #F6F5F5;
+    color: #D55353;
+}

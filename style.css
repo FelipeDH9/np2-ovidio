@@ -1,133 +1,109 @@
-main {
-    text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Roboto', sans-serif;
 }
+
+input, .btn {
+    padding: 8px;
+    border-radius: 4px;
+    border: 2px solid transparent;
+}
+
+input:focus {
+    outline: none !important;
+    border: 2px solid #4592AF;
+    box-shadow: 0 0 10px #3C6275;
+}
+
+.btn {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.bg-azul-500 {
+    background-color: #4592AF;
+    color: #fff;
+}
+
+.bg-vermelho-500 {
+    background-color: #D55353;
+}
+
 
 body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+
+    background-color: #EDDDCF;
 }
 
-footer{
-    margin-top: auto;
+ul {
+    overflow: hidden;
+    list-style-type: none;
+    background-color: #33313B;
+  }
+  
+header li {
+    float: left;
 }
 
-.cards {
+header li a {
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+header li a:hover {
+background-color: #111;
+}
+
+.fazer-login {
+    float: right;
+}
+
+.row {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
+}
+
+.item-rodape {
+    display: flex;
     justify-content: center;
     align-items: center;
-    
+    gap: 8px;
 }
 
-.ativa{
-    border: 1px green solid;
-    width: 42%;
-    margin: 10px auto;
-    border-radius: 5px;
-}
-
-.navbar {
+.redes{
     display: flex;
-    justify-content: space-between;
-    padding: 1rem;
+    justify-content: center;
+    gap: 16px;
 }
 
-.flex {
-    display: flex;
-    flex-direction: row;
+footer h5 {
+    font-size: 1rem;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;  
+    margin-top: auto;    
 }
 
 .logo{
     width: 5rem;
-}
-
-.titulo {
-    margin-top: 1rem;
-}
-
-.texto-claro{
-    color: #FEFDED;
-}
-
-.imagens {
-    height: 100px;
-    /* width: 100px; */
-}
-
-.nav-link {
-    font-size: 1.5rem;
-}
-
-h3 {
-    font-size: 1.5rem
-}
-
-.card {
-    background-color: #FEFDED;
-    border-radius: 1rem;
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
-    padding: 2rem;
-    margin: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    width: 400px;
-}
-
-.titulo{
-    text-align: center;
-}
-
-.bg-rosa{
-    background-color: #FA7070;
-}
-
-.rodape_ul{
-    list-style: none;
-}
-
-.rodape{
-    margin-top: 1rem;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;  
-    padding: 1rem;
-}
-
-h5{
-    text-align: center;
-}
-
-li{
-    list-style: none;
-    color: black;
-}
-
-.rede_social{
-    display: flex;
-}
-
-a:hover {
-    color: #f5f5f5;
-    text-decoration: underline;
-    opacity: 0.7;
-}
-
-.container-md{
-    text-align: justify;
-}
-
-a{
-    color: black;
-    text-decoration: none;
-}
-
-.principal{
-    text-align: center;
 }

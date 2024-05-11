@@ -21,7 +21,6 @@ function validar() {
     const usuario = document.getElementById('usuario').value;
     const senha = document.getElementById('senha').value;
     const enviar = document.getElementById('enviar');
-
     if (usuario.length > 3 && senha.length > 5){
         enviar.disabled = false;
     }
