@@ -5,12 +5,8 @@ function validarCampos() {
     const confirmar_senha = document.getElementById('confirmar_senha').value;
     const enviar = document.getElementById('enviar');
 
-    if (nome.length < 4){
-        console.log("nome muito pequeno")
-    } else if (senha.length < 6){
-        console.log("senha muito pequeno")
-    } else if(senha != confirmar_senha){
-        console.log("senhas diferentes")
+    if (nome.length < 4 || senha.length < 6 || senha != confirmar_senha){
+        enviar.disabled = true;
     } else {
         enviar.disabled = false;
     }
@@ -23,6 +19,8 @@ function validar() {
     const enviar = document.getElementById('enviar');
     if (usuario.length > 3 && senha.length > 5){
         enviar.disabled = false;
+    } else {
+        enviar.disabled = true;
     }
 }
 
