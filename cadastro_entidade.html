@@ -96,22 +96,26 @@
       
       <h1>Empresas Cadastradas</h1>
       <table id="empresas">
-        <tr>
-          <th>Nome</th>
-          <th>CNPJ</th>
-          <th>E-mail</th>
-          <th>Telefone</th>
-          <th>Ano de fundação</th>
-          <th>Endereço</th>
-        </tr>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>CNPJ</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Ano de fundação</th>
+            <th>Endereço</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
       </table>
   </main>
 
   <footer>
     <div class="rodape">
-      <ul>
-        <li>
-            <h5>Nos acompanhe nas nossas redes sociais</h5>
+      <div>
+        <h5>Nos acompanhe nas nossas redes sociais</h5>
         <div class="row redes">
           <a href="https://www.facebook.com/lagelateriapdl/?locale=pt_BR">
             <img src="assets/icons/facebook.svg" alt="Facebook">
@@ -122,7 +126,17 @@
           <a href="https://www.google.com/maps?ll=-23.24291,-45.90894&z=12&t=m&hl=pt-BR&gl=US&mapclient=embed&q=R.+Sena+Madureira,+05+-+Parque+Industrial+S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP+12237-020">
           </a>
         </div>
-        
+
+        <div>
+          <h5 class="titulo">Contato</h5>
+          <div class="item-rodape">
+            <img src="assets/icons/mail.svg" alt="">
+            <span>sorvete@lagelateria.com.br</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
         <h5 class="titulo">Nosso Endereço</h5>
         <div class="item-rodape">
           <img src="assets/icons/map-pin.svg" alt="">
@@ -134,15 +148,7 @@
           <img src="assets/icons/phone.svg" alt="">
           <span>(12) 99246-9810</span>
         </div>
-        
-        <h5 class="titulo">Nosso email</h5>
-        <div class="item-rodape">
-          <img src="assets/icons/mail.svg" alt="">
-          <span>sorvete@lagelateria.com.br</span>
-        </div>
-
-        </li>
-      </ul>
+      </div>
     </div>
   </footer>
 </body>

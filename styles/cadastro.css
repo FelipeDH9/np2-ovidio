@@ -1,16 +1,24 @@
 table {
-  margin: 8px auto;
+  margin: 16px auto;
 }
 
-tr {
-  background-color: #E3C4A8;
+tr td {
+  background-color: #F6F5F5;  /* branco */
+  /* background-color: #E3C4A8; */
   text-align: center;
 }
 
+/* primeira e último elemento da primeira linha */
+th:first-child {
+  border-radius: 4px 0 0 0;
+}
+th:last-child {
+  border-radius: 0 4px 0 0;
+}
+
 th {
-  background-color: #3C6275;
+  background-color: #E3C4A8;
   padding: 16px 8px;
   width: 14rem;
-  border: 2px #33313B solid;
-  color: #F6F5F5;
+  color:#33313B;
 }
