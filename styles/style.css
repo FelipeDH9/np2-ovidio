@@ -6,7 +6,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
-input, .btn {
+input, .btn, select {
     padding: 8px;
     border-radius: 4px;
     border: 2px solid transparent;
@@ -21,13 +21,34 @@ input:focus {
 .btn {
     font-weight: 700;
     font-size: 16px;
+    cursor: pointer;
+}
+.btn:disabled,
+.btn[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: default;
+}
+
+.btn[type="reset"] {
+    background-color: #E3C4A8;
+    color: #1a181d;
 }
 
 .column {
     display: flex;
     flex-direction: column;
 }
-
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.row-form {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
 
 .bg-azul-500 {
     background-color: #4592AF;
@@ -36,6 +57,7 @@ input:focus {
 
 .bg-vermelho-500 {
     background-color: #D55353;
+    color: #F6F5F5;
 }
 
 
@@ -71,11 +93,6 @@ background-color: #111;
 
 .fazer-login {
     float: right;
-}
-
-.row {
-    display: flex;
-    flex-direction: row;
 }
 
 .item-rodape {

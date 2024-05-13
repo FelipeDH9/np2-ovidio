@@ -5,13 +5,13 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Gelateria - Login</title>
+  <title>Login</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -43,18 +43,17 @@
 
           </nav> -->
           <ul>
-            <li><a class="ativo" href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
             <li><a href="cadastro_entidade.html">Cadastrar Universidade</a></li>
             <li class="fazer-login"><a href="index.html">Fazer Login</a></li>
-            <li class="fazer-login"><a href="cadastro.html">Fazer cadastro</a></li>
           </ul>
     </header>
 
-    <div class="container-login">
+    <div class="container">
         <h1 class="text-center">Faça seu Login</h1>
 
         <div class="column">
-            <label for="usuario" class="div-label">Nome: </label>
+            <label for="usuario">Nome: </label>
             <input type="text" id="usuario" class="form-control" onkeyup="validar()">
         </div>
 
@@ -63,7 +62,7 @@
             <input type="password" id="senha" class="form-control" onkeyup="validar()">
         </div>
         <div class="login-cadastro my-8">
-          <button class="btn bg-azul-500" id="enviar" disabled type="submit" onclick="entrar()">Fazer Login</button>
+          <button class="btn bg-azul-500" id="enviar" type="submit" onclick="entrar()" disabled>Fazer Login</button>
           <span class="my-8">
               Não possui login? <a href="cadastro.html">Fazer cadastro!</a>
           </span>
@@ -73,45 +72,43 @@
     </div>
 
     <footer>
-        <div class="rodape">
-            <ul>
-                <li>
-                   <h5>Nos acompanhe nas nossas redes sociais</h5>
-                <div class="row redes">
-                  <a href="https://www.facebook.com/lagelateriapdl/?locale=pt_BR">
-                    <img src="assets/icons/facebook.svg" alt="Facebook">
-                  </a>
-                  <a href="https://www.instagram.com/lagelateriaoficial/">
-                    <img src="assets/icons/instagram.svg" alt="">
-                  </a>
-                  <a href="https://www.google.com/maps?ll=-23.24291,-45.90894&z=12&t=m&hl=pt-BR&gl=US&mapclient=embed&q=R.+Sena+Madureira,+05+-+Parque+Industrial+S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP+12237-020">
-                  </a>
-                </div>
-                
-                <h5 class="titulo">Nosso Endereço</h5>
-                <div class="item-rodape">
-                  <img src="assets/icons/map-pin.svg" alt="">
-                  <span>R. Sena Madureira, 05 - Parque Industrial</span>
-                </div>
-                
-                <h5 class="titulo">Nosso telefone</h5>
-                <div class="item-rodape">
-                  <img src="assets/icons/phone.svg" alt="">
-                  <span>(12) 99246-9810</span>
-                </div>
-                
-                <h5 class="titulo">Nosso email</h5>
-                <div class="item-rodape">
-                  <img src="assets/icons/mail.svg" alt="">
-                  <span>sorvete@lagelateria.com.br</span>
-                </div>
+      <div class="rodape">
+        <ul>
+          <li>
+              <h5>Nos acompanhe nas nossas redes sociais</h5>
+          <div class="row redes">
+            <a href="https://www.facebook.com/lagelateriapdl/?locale=pt_BR">
+              <img src="assets/icons/facebook.svg" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/lagelateriaoficial/">
+              <img src="assets/icons/instagram.svg" alt="">
+            </a>
+            <a href="https://www.google.com/maps?ll=-23.24291,-45.90894&z=12&t=m&hl=pt-BR&gl=US&mapclient=embed&q=R.+Sena+Madureira,+05+-+Parque+Industrial+S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP+12237-020">
+            </a>
+          </div>
+          
+          <h5 class="titulo">Nosso Endereço</h5>
+          <div class="item-rodape">
+            <img src="assets/icons/map-pin.svg" alt="">
+            <span>R. Sena Madureira, 05 - Parque Industrial</span>
+          </div>
+          
+          <h5 class="titulo">Nosso telefone</h5>
+          <div class="item-rodape">
+            <img src="assets/icons/phone.svg" alt="">
+            <span>(12) 99246-9810</span>
+          </div>
+          
+          <h5 class="titulo">Nosso email</h5>
+          <div class="item-rodape">
+            <img src="assets/icons/mail.svg" alt="">
+            <span>sorvete@lagelateria.com.br</span>
+          </div>
 
-                </li>
-            </ul>
-        </div>
-
+          </li>
+        </ul>
+      </div>
     </footer>
-   
 </body>
 <script src="main.js"></script>
 

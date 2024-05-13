@@ -29,7 +29,8 @@ function validar() {
 // (ITEM 3) mostrar mensagem de cadastro, e mostrar botão de login
 function cadastrar(){
     const mensagem = document.getElementById("mensagem");
-    mensagem.classList.add('ativa')
+    // mensagem.classList.add('ativa')
+    mensagem.style.display = 'block';
     mensagem.innerHTML = "Usuário cadastrado!<br><a class='nav-link' href='index.html'>Faça Login</a>"
 }
 

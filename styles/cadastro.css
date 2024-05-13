@@ -1,0 +1,16 @@
+table {
+  margin: 8px auto;
+}
+
+tr {
+  background-color: #E3C4A8;
+  text-align: center;
+}
+
+th {
+  background-color: #3C6275;
+  padding: 16px 8px;
+  width: 14rem;
+  border: 2px #33313B solid;
+  color: #F6F5F5;
+}

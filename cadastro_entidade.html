@@ -1,151 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>La Gelateria - Cadastro</title>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-        
-      </head>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles/cadastro.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/style.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de entidades</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
 <body>
-    <header>
+  <header>
+    <ul>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a class="ativo" href="cadastro_entidade.html">Cadastrar Universidade</a></li>
+      <li class="fazer-login"><a href="index.html">Fazer Login</a></li>
+    </ul>
+  </header>
 
-        <nav class="navbar navbar-expand-sm bg-rosa">
-          <div>
-            <a class="navbar-brand" href="sobre.html">
-              <img class="logo" src="img/sorvete-logo.png" alt="Logo">
-            </a>
+  <main>
+    <div id="mensagem"></div>
+    <div class="container">
+      <h1 class="titulo">Cadastro de Universidade:</h1>
+      <div class="row-form">
+        <div class="column">
+            <label for="nome_empresa">Insira o nome da universidade:</label>
+            <input type="text" id="nome_empresa">
+        </div>
+
+        <div class="column">
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" id="cnpj">
+        </div>
+      </div>
+
+        <div class="column">
+          <label for="email">E-mail</label>
+          <input type="text" id="email">
+        </div>
+        <div class="row-form">
+          <div class="column">
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone">
           </div>
-          
-              <div class="flex">
-                <ul class="navbar-nav text-light">
-                  <li class="nav-item">
-                    <a class="nav-link" href="sobre.html">Início</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="products.html">Produtos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="cadastro.html">Cadastrar</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="index.html">Faça Login</a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-    </header>
+          <div class="column">
+              <label for="ano_fundacao">Ano de fundação:</label>
+              <input type="number" id="ano_fundacao">
+          </div>
+        </div>
+        <hr>
+        <div class="row-form">
+          <div class="column">
+            <label for="cep">CEP:</label>
+            <input type="number" max="99999999" id="cep" onkeyup="consultaCep()">
+          </div>
+          <div class="column">
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro">
+          </div>
+        </div>
+        <div class="column">
+          <label for="logradouro">Logradouro:</label>
+          <input type="text" id="logradouro">
+        </div>
+        <div class="row-form">
+          <div class="column" id="column-uf">
+            <label for="uf">UF:</label>
+            <input type="text" id="uf" class="form-control">
+          </div>
+          <div class="column">
+            <label for="cidade">Cidade:</label>
+            <select name="cidades" id="cidades">
+              <option value="0" id="cidade">Selecione uma cidade</option>
+            </select>
+            <!-- <input type="text" id="cidade"> -->
+          </div>
+        </div>
 
-    <main>
-      <div id="mensagem"></div>
-        <div class="container-sm mt-4 py-3 px-3 col-5 rounded bg-rosa">
-            <h1 class="titulo">Cadastro de Empresas</h1>
-            <div>
-                <label for="nome_empresa" class="form-label">Insira o nome da empresa:</label>
-                <input type="text" id="nome_empresa" class="form-control">
-            </div>
+        <div class="row-form ">
+            <button type="button" class="btn bg-vermelho-500">
+              Cancelar
+            </button>
+            <button type="reset" class="btn" onclick="limparDados()">
+              Limpar valores
+            </button>
+            <button type="submit" id="enviar" class="btn bg-azul-500" onclick="inserir()">                    
+              Enviar
+            </button>
+          </div>
+      </div>
+      
+      <h1>Empresas Cadastradas</h1>
+      <table id="empresas">
+        <tr>
+          <th>Nome</th>
+          <th>CNPJ</th>
+          <th>E-mail</th>
+          <th>Telefone</th>
+          <th>Ano de fundação</th>
+          <th>Endereço</th>
+        </tr>
+      </table>
+  </main>
 
-            <div>
-                <label for="cnpj" class="form-label">CPNJ:</label>
-                <input type="text" id="cnpj" class="form-control">
-            </div>
-
-            <div>
-              <label for="email" class="form-label">E-mail</label>
-              <input type="text" id="email" class="form-control">
-            </div>
-            <div>
-              <label for="telefone" class="form-label">Telefone</label>
-              <input type="text" id="telefone" class="form-control">
-            </div>
-            <div>
-                <label for="ano_fundacao" class="form-label">Ano de fundação:</label>
-                <input type="number" id="ano_fundacao" class="form-control">
-            </div>
-            
-            <div>
-              <div>
-                <label for="cep" class="form-label">CEP:</label>
-                <input type="number" max="99999999" id="cep" class="form-control" onkeyup="consultaCep()">
-              </div>
-
-              <div>
-                <label for="logradouro" class="form-label">Logradouro:</label>
-                <input type="text" id="logradouro" class="form-control">
-              </div>
-              <div>
-                <label for="bairro" class="form-label">Bairro:</label>
-                <input type="text" id="bairro" class="form-control">
-              </div>
-              <div>
-                <label for="cidade" class="form-label">Cidade:</label>
-                <select name="cidades" id="cidades">
-                  <option value="0" id="cidade">Selecione uma cidade</option>
-                </select>
-                <!-- <input type="text" id="cidade" class="form-control"> -->
-              </div><div>
-                <label for="uf" class="form-label">UF:</label>
-                <input type="text" id="uf" class="form-control">
-              </div>
-            </div>
-
-
-            <div class="row mt-3 grid">
-                <input type="reset" value="Cancelar" class="btn btn-danger g-col-4">
-                <input type="reset" value="Limpar valores" class="btn btn-secondary g-col-4" onclick="limparDados()">
-                <input type="submit" value="Enviar" id="enviar" class="btn btn-success g-col-4" onclick="inserir()">                    
-            </div>
+  <footer>
+    <div class="rodape">
+      <ul>
+        <li>
+            <h5>Nos acompanhe nas nossas redes sociais</h5>
+        <div class="row redes">
+          <a href="https://www.facebook.com/lagelateriapdl/?locale=pt_BR">
+            <img src="assets/icons/facebook.svg" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/lagelateriaoficial/">
+            <img src="assets/icons/instagram.svg" alt="">
+          </a>
+          <a href="https://www.google.com/maps?ll=-23.24291,-45.90894&z=12&t=m&hl=pt-BR&gl=US&mapclient=embed&q=R.+Sena+Madureira,+05+-+Parque+Industrial+S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP+12237-020">
+          </a>
         </div>
         
-        <h2>Empresas Cadastradas</h2>
-        <table id="empresas">
-          <tr>
-            <th>Nome</th>
-            <th>CNPJ</th>
-            <th>E-mail</th>
-            <th>Telefone</th>
-            <th>Ano de fundação</th>
-            <th>Endereço</th>
-          </tr>
-        </table>
-    </main>
+        <h5 class="titulo">Nosso Endereço</h5>
+        <div class="item-rodape">
+          <img src="assets/icons/map-pin.svg" alt="">
+          <span>R. Sena Madureira, 05 - Parque Industrial</span>
+        </div>
+        
+        <h5 class="titulo">Nosso telefone</h5>
+        <div class="item-rodape">
+          <img src="assets/icons/phone.svg" alt="">
+          <span>(12) 99246-9810</span>
+        </div>
+        
+        <h5 class="titulo">Nosso email</h5>
+        <div class="item-rodape">
+          <img src="assets/icons/mail.svg" alt="">
+          <span>sorvete@lagelateria.com.br</span>
+        </div>
 
-    <footer class="rodape bg-rosa">
-        <nav>
-            <ul>
-                <li>
-                   <h5>Nós acompanhe pelas redes sociais</h5>
-                <div class="facebook">
-                    <a href="https://www.facebook.com/lagelateriapdl/?locale=pt_BR">Facebook</a>
-                </div>
-
-                <div class="instagram">
-                    <a href="https://www.instagram.com/lagelateriaoficial/">Instagram</a>
-                </div>
-                
-                <h5 class="titulo">Nosso Endereço</h5>
-                <div class="localizacao">
-                    <a href="https://www.google.com/maps?ll=-23.24291,-45.90894&z=12&t=m&hl=pt-BR&gl=US&mapclient=embed&q=R.+Sena+Madureira,+05+-+Parque+Industrial+S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP+12237-020">R. Sena Madureira, 05 - Parque Industrial</a>
-                </div>
-                
-                <h5 class="titulo">Nossos telefones</h5>
-                <div class="telefone">
-                    <p>(12) 99246-9810</p>
-                </div>
-                
-                <h5 class="titulo">Nosso email</h5>
-                <div class="email">
-                    <p>sorvete@lagelateria.com.br</p>
-                </div>
-
-                </li>
-            </ul>
-        </nav>
-
-    </footer>
+        </li>
+      </ul>
+    </div>
+  </footer>
 </body>
 <script src="main.js"></script>
 

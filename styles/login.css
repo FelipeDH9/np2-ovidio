@@ -1,0 +1,97 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    
+    background-color: #33313B;
+    color: #F6F5F5;
+    border-radius: 12px;
+    
+    gap: 8px;
+    
+    /* 16px acima e abaixo - auto para centralizar */
+    margin: 16px auto;
+    max-width: 640px;
+    padding: 8px;
+    
+}
+.container-cadastro {
+    display: flex;
+    flex-direction: column;
+    
+    background-color: #33313B;
+    color: #F6F5F5;
+    border-radius: 12px;
+    
+    gap: 8px;
+    
+    /* 16px acima e abaixo - auto para centralizar */
+    margin: 16px auto;
+    max-width: 30rem;
+    padding: 8px;
+}
+
+.container input {
+    min-width: 360px;
+    background-color: #F6F5F5;
+}
+.row-form input {
+    min-width: 180px;
+}
+.row-form #uf {
+    min-width: 20%;
+}
+.row-form #column-uf {
+    max-width: 20%;
+}
+.row-form .column{
+    width: 100%;
+}
+.row-form button {
+    margin-top: 16px;
+    width: 100%;
+}
+.my-8 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.container span, h1 {
+    text-align: center;
+}
+.login-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.login-cadastro a {
+    color: #4592AF;
+}
+
+.login-cadastro a:hover {
+    color: #94ABAC;   
+}
+
+.container hr {
+    display: block;
+    border: 0;
+    border-top: 1px solid #9592a5;
+
+    width: 98%;
+    margin: 8px auto;
+    padding: 0;
+    height: 1px;
+}
+
+#mensagem {
+    display: none;
+    width: 240px;
+
+    background-color: #4592AF;
+    color: #F6F5F5;
+    border-radius: 8px;
+    
+    margin: 32px auto;
+    padding: 8px;
+    text-align: center;
+}
