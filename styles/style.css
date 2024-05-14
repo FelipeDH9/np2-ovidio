@@ -6,6 +6,80 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #EDDDCF;
+}
+/* CABEÇALHO */
+ul {
+    overflow: hidden;
+    list-style-type: none;
+    background-color: #33313B;
+  }
+  
+header li {
+    float: left;
+}
+
+header li a {
+display: block;
+color: #fff;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+header li a:hover {
+background-color: #111;
+}
+
+.fazer-login {
+    float: right;
+}
+/* FOOTER */
+.item-rodape {
+    display: flex;
+    flex-direction: column;
+
+    width: 16rem;
+    gap: 4px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.redes{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+footer h5 {
+    font-size: 1rem;
+}
+.rodape {
+    display: flex;
+    justify-content: center;
+    /* flex-direction: row; */
+    gap: 16px;
+
+    margin: 16px 0;
+}
+footer {   
+
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    background-color: #33313B;
+    text-align: center;  
+    margin-top: auto;    
+
+}
+
+/* FORMULARIOS */
 input, .btn, select {
     padding: 8px;
     border-radius: 4px;
@@ -15,7 +89,6 @@ input, .btn, select {
 input:focus {
     outline: none !important;
     border: 2px solid #4592AF;
-    box-shadow: 0 0 10px #3C6275;
 }
 
 .btn {
@@ -48,11 +121,6 @@ input:focus {
     display: flex;
     flex-direction: row;
 }
-.row-form {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-}
 
 .bg-azul-500 {
     background-color: #4592AF;
@@ -71,76 +139,12 @@ input:focus {
     background-color: #974545;
     transition: 0.2s;
 }
-
-body{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-
-    background-color: #EDDDCF;
+/* SOBRE.HTML */
+.text-container {
+    text-align: center;
+    width: 48rem;
+    margin: 16px auto;
 }
-
-ul {
-    overflow: hidden;
-    list-style-type: none;
-    background-color: #33313B;
-  }
-  
-header li {
-    float: left;
-}
-
-header li a {
-display: block;
-color: #fff;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-}
-
-header li a:hover {
-background-color: #111;
-}
-
-.fazer-login {
-    float: right;
-}
-
-.item-rodape {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-}
-
-.redes{
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-}
-
-footer h5 {
-    font-size: 1rem;
-}
-.rodape {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-
-    margin: 32px 0;
-}
-footer {   
-
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: #fff;
-    background-color: #33313B;
-    text-align: center;  
-    margin-top: auto;    
-
-}
-
-.logo{
-    width: 5rem;
+.text-container img {
+    margin: 8px 0;
 }

@@ -30,18 +30,25 @@
     padding: 8px;
 }
 
+/* FORMS */
+
 .container input {
     min-width: 360px;
     background-color: #F6F5F5;
 }
+.row-form {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
 .row-form input {
     min-width: 180px;
 }
-.row-form #uf {
-    min-width: 20%;
-}
 .row-form #column-uf {
     max-width: 20%;
+}
+#uf {
+    min-width: 20%;
 }
 .row-form .column{
     width: 100%;

@@ -9,73 +9,45 @@
     <link rel="stylesheet" href="styles/style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-
-      <!-- <nav class="navbar navbar-expand-sm bg-rosa">
-        <div>
-          <a class="navbar-brand" href="sobre.html">
-            <img class="logo" src="img/sorvete-logo.png" alt="Logo">
-          </a>
-        </div>
-        
-            <div class="flex">
-              <ul class="navbar-nav text-light">
-                <li class="nav-item">
-                  <a class="nav-link" href="sobre.html">Início</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="products.html">Produtos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="cadastro.html">Cadastrar</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Faça Login</a>
-                </li>
-              </ul>
-            </div>
-
-          </nav> -->
-          <ul>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="cadastro_entidade.html">Cadastrar Universidade</a></li>
-            <li class="fazer-login"><a href="index.html">Fazer Login</a></li>
-          </ul>
+      <ul>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="cadastro_entidade.html">Cadastrar Universidade</a></li>
+        <li class="fazer-login"><a href="index.html">Fazer Login</a></li>
+      </ul>
     </header>
 
     <div class="container">
-        <h1 class="text-center">Faça seu Login</h1>
+      <h1 class="text-center">Faça seu Login</h1>
 
-        <div class="column">
-            <label for="usuario">Nome: </label>
-            <input type="text" id="usuario" class="form-control" onkeyup="validar()">
-        </div>
+      <div class="column">
+        <label for="usuario">Nome: </label>
+        <input type="text" id="usuario" class="form-control" onkeyup="validar()">
+      </div>
 
-        <div class="column">
-            <label for="senha" class="form-label">Digite sua senha:</label>
-            <input type="password" id="senha" class="form-control" onkeyup="validar()">
-        </div>
-        <div class="login-cadastro my-8">
-          <button class="btn bg-azul-500" id="enviar" type="submit" onclick="entrar()" disabled>Fazer Login</button>
-          <span class="my-8">
-              Não possui login? <a href="cadastro.html">Fazer cadastro!</a>
-          </span>
-        </div>
-        
-        </form>
+      <div class="column">
+        <label for="senha" class="form-label">Digite sua senha:</label>
+        <input type="password" id="senha" class="form-control" onkeyup="validar()">
+      </div>
+      <div class="login-cadastro my-8">
+        <button class="btn bg-azul-500" id="enviar" type="submit" onclick="entrar()" disabled>Fazer Login</button>
+        <span class="my-8">
+          Não possui login? <a href="cadastro.html">Fazer cadastro!</a>
+        </span>
+      </div>
+      
+      </form>
     </div>
 
     <footer>
       <div class="rodape">
-        <ul>
-          <li>
-              <h5>Nos acompanhe nas nossas redes sociais</h5>
+        <div class="item-rodape">
+          <h5>Nos acompanhe nas nossas redes sociais</h5>
           <div class="row redes">
             <a href="https://www.facebook.com/lagelateriapdl/?locale=pt_BR">
               <img src="assets/icons/facebook.svg" alt="Facebook">
@@ -87,26 +59,23 @@
             </a>
           </div>
           
-          <h5 class="titulo">Nosso Endereço</h5>
+          <h5 class="titulo">Contato</h5>
+          <span>sorvete@lagelateria.com.br</span>
+          
+        </div>
+        
+  
+        <div>
           <div class="item-rodape">
-            <img src="assets/icons/map-pin.svg" alt="">
+            <h5 class="titulo">Nosso Endereço</h5>
             <span>R. Sena Madureira, 05 - Parque Industrial</span>
           </div>
           
-          <h5 class="titulo">Nosso telefone</h5>
           <div class="item-rodape">
-            <img src="assets/icons/phone.svg" alt="">
+            <h5 class="titulo">Nosso telefone</h5>
             <span>(12) 99246-9810</span>
           </div>
-          
-          <h5 class="titulo">Nosso email</h5>
-          <div class="item-rodape">
-            <img src="assets/icons/mail.svg" alt="">
-            <span>sorvete@lagelateria.com.br</span>
-          </div>
-
-          </li>
-        </ul>
+        </div>
       </div>
     </footer>
 </body>

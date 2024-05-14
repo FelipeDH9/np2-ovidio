@@ -17,6 +17,7 @@ function validar() {
     const usuario = document.getElementById('usuario').value;
     const senha = document.getElementById('senha').value;
     const enviar = document.getElementById('enviar');
+
     if (usuario.length > 3 && senha.length > 5){
         enviar.disabled = false;
     } else {
@@ -27,7 +28,6 @@ function validar() {
 // (ITEM 3) mostrar mensagem de cadastro, e mostrar botão de login
 function cadastrar(){
     const mensagem = document.getElementById("mensagem");
-    // mensagem.classList.add('ativa')
     mensagem.style.display = 'block';
     mensagem.innerHTML = "Usuário cadastrado!<br><a class='nav-link' href='index.html'>Faça Login</a>"
 }
@@ -36,7 +36,8 @@ function cadastrar(){
 function entrar() {
     const usuario = document.getElementById('usuario').value;
     const senha = document.getElementById('senha').value;
-    
+
+    // redirecionar para a página cadastro_entidade
     window.location.replace("cadastro_entidade.html");
 }
 
@@ -66,21 +67,35 @@ async function consultaCep(){
     if(cep.length == 8) {
         const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
         const data = await response.json()
+        
         logradouro.value = data['logradouro']
         bairro.value = data['bairro']
         cidade.value = data['localidade']
         cidade.innerHTML = `${data['localidade']}`
         uf.value = data['uf']
 
-        // função para cirar campos das cidades na lista suspensa (select)
+        // função para criar campos das cidades na lista suspensa (select)
         const resposta = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${data['uf']}/distritos`)
         const cidades = await resposta.json()
 
+        // criar uma option para cada cidade do estado
         for (let i = 0; i < cidades.length; i++) {
             var option = document.createElement("option")
             option.text = cidades[i]['municipio']['nome']
             cidades_select.add(option)
         }
+
+    } else if (uf.value.length == 2){
+        // função para criar campos das cidades na lista suspensa (select)
+        const resposta = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf.value}/distritos`)
+        const cidades = await resposta.json()
+
+        // criar uma option para cada cidade do estado
+        for (let i = 0; i < cidades.length; i++) {
+        var option = document.createElement("option")
+        option.text = cidades[i]['municipio']['nome']
+        cidades_select.add(option)
+    }
 
     }
 
@@ -130,6 +145,8 @@ function inserir(){
     const uf = document.getElementById("uf")
 
     const tabela = document.getElementById("empresas")
+
+    // adicionar linha e celulas na tabela 
     var linha = tabela.insertRow(1)
     var campo0 = linha.insertCell(0)
     var campo1 = linha.insertCell(1)
@@ -137,20 +154,33 @@ function inserir(){
     var campo3 = linha.insertCell(3)
     var campo4 = linha.insertCell(4)
     var campo5 = linha.insertCell(5)
+
     campo0.innerHTML = nome_empresa.value
     campo1.innerHTML = cnpj.value
     campo2.innerHTML = email.value
     campo3.innerHTML = telefone.value
     campo4.innerHTML = ano_fundacao.value
+
     var endereco_completo = `${logradouro.value}, ${bairro.value}, ${cidade.value}, ${uf.value}, ${cep.value}`
+
     campo5.innerHTML = endereco_completo
     
     // Novo objeto a ser adicionado ao jsonEmpresas
-    var novoObjeto = {"nome_empresa":  nome_empresa.value, "cnpj": cnpj.value, "ano_fundacao": ano_fundacao.value, "telefone": telefone.value, "email": email.value, "cep": cep.value, "logradouro": logradouro.value, "bairro": bairro.value, "cidade": cidade.value, "uf": uf.value};
+    var novoObjeto = {
+        "nome_empresa":  nome_empresa.value, 
+        "cnpj": cnpj.value, 
+        "ano_fundacao": ano_fundacao.value, 
+        "telefone": telefone.value, 
+        "email": email.value, 
+        "cep": cep.value, 
+        "logradouro": logradouro.value, 
+        "bairro": bairro.value, 
+        "cidade": cidade.value, 
+        "uf": uf.value
+    };
 
+    // inserir no json o novo objeto criado
     jsonEmpresas.empresas.push(novoObjeto);
 
     console.log(jsonEmpresas)
-
-    
 }
