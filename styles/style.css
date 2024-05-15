@@ -102,6 +102,7 @@ input:focus {
   background-color: #cccccc;
   color: #666666;
   cursor: default;
+  pointer-events: none;
 }
 
 .btn[type="reset"] {
@@ -141,10 +142,30 @@ input:focus {
 }
 /* SOBRE.HTML */
 .text-container {
-    text-align: center;
-    width: 48rem;
+    text-align: justify;
+    width: 54rem;
     margin: 16px auto;
 }
-.text-container img {
+
+.logo {
+    margin: 8px auto;
+    text-align: center;
+}
+
+.text-container .text-img {
+    width: 24rem;
+    border-radius: 4px;
+}
+
+.text-container h2 {
+    text-align: center;
+}
+.p-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 16px;
     margin: 8px 0;
 }
+
